@@ -1,4 +1,4 @@
-[Anaconda env] sample 
+[Anaconda env : sample]
 # open "Anaconda Prompt (anaconda3)"
 
 # Create new anconda env
@@ -19,3 +19,65 @@ pip install SciPy
 
 # add kernel
 python -m ipykernel install --user --name sample --display-name "sample"
+
+
+
+
+##########OTHER_STUFF(Anaconda prompt)############################################
+
+# Update Anaconda highest version
+conda update -n base -c defaults conda
+
+# Delete kernel
+jupyter kernelspec uninstall 커널이름
+
+#가상환경 set
+conda create -n KERNEL_NAME  #가상환경 생성
+conda env list  #가상환경 보기 
+conda env remove --n KERNEL_NAME  #삭제              
+conda activate KERNEL_NAME  #가상환경 activate
+
+#Local Gpu setting
+conda install -c anaconda tensorflow-gpu==2.1.0  
+↓ (version check)
+cudatoolkit        anaconda/win-64::cudatoolkit-10.1.243-h74a9793_0
+cudnn              anaconda/win-64::cudnn-7.6.5-cuda10.1_0
+tensorflow-gpu     anaconda/win-64::tensorflow-gpu-2.1.0-h0d30ee6_0
+index ---> https://anaconda.org/anaconda/tensorflow-gpu
+
+
+#Required library
+conda install numpy scipy matplotlib pandas scikit-learn seaborn pydotplus -y
+conda install -c anaconda graphviz -y  #Decision Tree 시각화때 사용
+pip install opencv-python
+
+
+##########OTHER_STUFF(jupyterNotebook)##########################################
+
+#Check out Gpu setting1(in jupyter script)
+import tensorflow as tf 
+print(tf.test.is_built_with_cuda())  #True >> using Gpu 
+print(tf.test.is_gpu_available(cuda_only=False, min_cuda_compute_capability=None))  #True >> using Gpu 
+
+#Check out Gpu setting2(in jupyter script)
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())  #print out details of current drive status
+
+#Tensor flow ver. check
+import tensorflow as tf
+tf.__version__  #2.4.1  #if you follow above packages 'tensorflow-gpu==2.1.0'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

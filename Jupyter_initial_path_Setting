@@ -1,0 +1,36 @@
+##Jupyter Notebook 시작 디렉토리 설정
+default 값은 user/(개인id) 이기 때문에 c:/ 로 시작하기 위해서는 경로 재설정이 필요함**
+
+1. Anaconda prompt 실행 (관리자 권한으로)
+
+2. prompt 창에 아래 명령어 입력
+jupyter notebook --generate-config -y
+위 명령어를 입력하면 아랫줄에 경로가 표시됨. 해당 경로로 이동.
+
+3. 숨김 폴더 보기 설정
+폴더 open - 보기 탭 - '숨김 항목' 체크
+
+4. prompt 창에 작성된 경로로 이동
+
+5. jupyter_notebook_config.py 파일 열기(메모장으로)
+
+6. 아래 단어를 검색 (ctrl+f)
+# c.NotebookApp.notebook_dir = ''
+
+7. 검색된 줄을 아래와 같이 수정
+c.NotebookApp.notebook_dir = 'C:/'
+
+8. 저장 후 창 닫기
+
+
+9. 시작 - 'jupyter Notebook (sample)' 입력(실행X) - 파일 위치 열기
+
+10. 'jupyter Notebook (sample)' 바로가기 우클릭 후 속성
+
+11. 삭제 항목
+시작위치(s) 탭의 %HOMEPATH% 삭제
+대상(T) 의  "%USERPROFILE%/" 삭제
+두 개 삭제 후 확인 클릭
+
+12. jupyter Notebook (sample) 실행
+실행하면 홈 처음 디렉토리가 C:/ 인 것을 확인가능
