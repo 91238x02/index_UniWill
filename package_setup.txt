@@ -26,16 +26,17 @@ python -m ipykernel install --user --name sample --display-name "sample"
 ##########OTHER_STUFF(Anaconda prompt)############################################
 
 # Update Anaconda highest version
-conda update -n base -c defaults conda
+conda update -n base -c defaults conda  #필요시 수행
 
 # Delete kernel
 jupyter kernelspec uninstall 커널이름
 
 #가상환경 set
-conda create -n KERNEL_NAME  #가상환경 생성
+conda create -n KERNEL_NAME python=3.7  #가상환경 생성
 conda env list  #가상환경 보기 
 conda env remove --n KERNEL_NAME  #삭제              
 conda activate KERNEL_NAME  #가상환경 activate
+python --version  #python version check
 
 #Local Gpu setting
 conda install -c anaconda tensorflow-gpu==2.1.0  
@@ -52,6 +53,10 @@ conda install -c anaconda graphviz -y  #Decision Tree 시각화때 사용
 pip install opencv-python
 
 
+#Check
+conda list
+
+
 ##########OTHER_STUFF(jupyterNotebook)##########################################
 
 #Check out Gpu setting1(in jupyter script)
@@ -65,7 +70,7 @@ print(device_lib.list_local_devices())  #print out details of current drive stat
 
 #Tensor flow ver. check
 import tensorflow as tf
-tf.__version__  #2.4.1  #if you follow above packages 'tensorflow-gpu==2.1.0'
+tf.__version__  #2.1.0  #if you follow above packages 'tensorflow-gpu==2.1.0'
 
 
 
