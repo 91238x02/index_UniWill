@@ -53,6 +53,10 @@ conda install -c anaconda graphviz -y  #Decision Tree 시각화때 사용
 pip install opencv-python
 
 
+#Jupyter lab (Advanced tool of Jupyter Notebook)
+conda install -c conda-forge jupyterlab -y
+
+
 #Check
 conda list
 
